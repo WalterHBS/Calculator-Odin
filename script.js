@@ -1,5 +1,6 @@
 function add(a, b){
-    return (parseInt(a) + parseInt(b))
+    console.log(a, b)
+    return (parseFloat(a) + parseFloat(b))
 }
 function subtract(a, b){
     return (a - b)
@@ -81,9 +82,10 @@ operatorBtn.forEach(button => {
     })
 })
 equal.addEventListener('click', () => {
-    
-        let operationResult = operator(firstNumber, displayNumber.innerText, operation)
-        if(isInt(operationResult)){
+    let operationResult = operator(firstNumber, displayNumber.innerText, operation)
+       if(displayNumber.innerHTML == ""){
+        displayNumber.innerHTML = ""
+       } else if(isInt(operationResult)){
             displayNumber.innerHTML = operationResult
         }else{
             displayNumber.innerHTML = operationResult.toFixed(2)
