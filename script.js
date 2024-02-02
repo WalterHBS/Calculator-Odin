@@ -13,7 +13,6 @@ function divide(a, b){
     }
 }
 function multiply(a, b){
-    console.log (a,b)
     return a * b
 }
 
@@ -42,6 +41,7 @@ const operatorBtn = document.querySelectorAll(".operator")
 const displayNumber = document.querySelector('p')
 const clearBtn = document.querySelector("#clearBtn")
 const equal = document.querySelector("#equalBtn")
+const dot = document.querySelector(".dot-number")
 
 clearBtn.addEventListener('click', () => {
     firstNumber = undefined
@@ -57,8 +57,13 @@ numbersBtn.forEach(button => {
             secondNumber = false
         }else{displayNumber.append(button.innerText);}
   })
+  
 })
-console.log(operatorBtn)
+dot.addEventListener('click', () => {
+    if (displayNumber.innerHTML.indexOf(".") != -1){}
+    else{displayNumber.append(dot.innerHTML)}
+    
+  })
 operatorBtn.forEach(button => {
     button.addEventListener('click', ()=> {
         if(operation != undefined ){
@@ -76,7 +81,7 @@ operatorBtn.forEach(button => {
     })
 })
 equal.addEventListener('click', () => {
-    console.log(firstNumber, operation)
+    
         let operationResult = operator(firstNumber, displayNumber.innerText, operation)
         if(isInt(operationResult)){
             displayNumber.innerHTML = operationResult
