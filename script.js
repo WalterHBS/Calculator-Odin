@@ -29,6 +29,10 @@ function operator(a, b, op){
         return divide(a, b)
     }
 }
+function isInt(n){
+        return n % 1 === 0; 
+}
+
 let firstNumber 
 let operation
 let secondNumber
@@ -58,7 +62,10 @@ operatorBtn.forEach(button => {
 equal.addEventListener('click', () => {
     console.log(firstNumber, operation)
         let operationResult = operator(firstNumber, displayNumber.innerText, operation)
-        console.log(operationResult)
-        displayNumber.innerHTML = operationResult
+        if(isInt(operationResult)){
+            displayNumber.innerHTML = operationResult
+        }else{
+            displayNumber.innerHTML = operationResult.toFixed(2)
+        }
     
 })
