@@ -43,20 +43,36 @@ const displayNumber = document.querySelector('p')
 const clearBtn = document.querySelector("#clearBtn")
 const equal = document.querySelector("#equalBtn")
 
-clearBtn.addEventListener('click', () => displayNumber.innerText ="")
+clearBtn.addEventListener('click', () => {
+    firstNumber = undefined
+    operation = undefined
+    secondNumber = undefined
+    displayNumber.innerText =""
+})
 numbersBtn.forEach(button => {
     button.addEventListener('click',()=>{
-        displayNumber.append(button.innerText);
-/*         displayNumber.updateDisplay();
- */    })
+        if(secondNumber == true){
+            displayNumber.innerText = "";
+            displayNumber.append(button.innerText)
+            secondNumber = false
+        }else{displayNumber.append(button.innerText);}
+  })
 })
 console.log(operatorBtn)
 operatorBtn.forEach(button => {
     button.addEventListener('click', ()=> {
+        if(operation != undefined ){
+            let newFirstNumber = operator(firstNumber, displayNumber.innerText, operation)
+            displayNumber.innerHTML = newFirstNumber
+            firstNumber = newFirstNumber
+            operation = button.innerHTML
+            secondNumber = true
+        }else{
         firstNumber = displayNumber.innerHTML
         operation = button.innerHTML 
         displayNumber.innerText = ""
-        console.log(firstNumber)
+        }
+        
     })
 })
 equal.addEventListener('click', () => {
