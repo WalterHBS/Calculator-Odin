@@ -43,7 +43,14 @@ const displayNumber = document.querySelector('p')
 const clearBtn = document.querySelector("#clearBtn")
 const equal = document.querySelector("#equalBtn")
 const dot = document.querySelector(".dot-number")
+const deleteBtn = document.querySelector("#deleteBtn")
 
+deleteBtn.addEventListener('click', () => {
+    if(displayNumber.innerHTML != ""){
+       let delNum = displayNumber.innerHTML.slice(0, -1)
+       displayNumber.innerHTML = delNum
+    }
+})
 clearBtn.addEventListener('click', () => {
     firstNumber = undefined
     operation = undefined
