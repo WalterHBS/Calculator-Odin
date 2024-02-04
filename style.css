@@ -7,22 +7,40 @@ body{
     width: 300px;
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
+box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+#screen{
+    padding: 10px;
+    height: 62px;
+    background-color: #d4e2e3;
 }
 #button-container{
     display: flex;
     flex-direction: column;
-    flex: 1;
+    justify-content: space-between;
     height: 100%;
+    background-color: #5d5d5d;
 }
 #button-container div{
     display: flex;
     justify-content: space-between;
 }
+.data-number{
+    background-color: #727272;
+}
+.operator, #clearBtn, #deleteBtn, #equalBtn, #dotBtn{
+    background-color: #555555;
+}
 #button-container div button{
-
 height: 30px;
 width: 74px;
-padding: 20px;
+padding: 28px;
+color: white;
+font-size: 15px;
+box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+display: flex;
+justify-content: center ;
 }
 
 #first-row button{
