@@ -6,8 +6,8 @@ function subtract(a, b){
     return (a - b)
 }
 function divide(a, b){
-    if(b === 0){
-        prompt("You can't divide by zero dummy")
+    if(b == 0){
+        alert("You can't divide by zero dummy")
         return 0
     } else{
         return (a / b)
